@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Director's Production Guide</title>
+<style>
+:root{--bg:#fff;--fg:#17171a;--mut:#62626b;--card:#f5f5f2;--acc:#b8860b;--line:#e2e2dc;--lk:#0b5cad;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0e10;--fg:#f1f1ee;--mut:#a0a0a8;--card:#18181b;--acc:#f5d442;--line:#2a2a2f;--lk:#7db4f5}}
+:root[data-theme="dark"]{--bg:#0e0e10;--fg:#f1f1ee;--mut:#a0a0a8;--card:#18181b;--acc:#f5d442;--line:#2a2a2f;--lk:#7db4f5}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif}
+main{max-width:720px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:26px;line-height:1.15;margin:8px 0 6px}
+h2{font-size:22px;margin:0 0 4px;color:var(--acc);letter-spacing:.02em;text-transform:uppercase}
+.sub,.src{color:var(--mut);font-size:14px;margin:0 0 10px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+nav a{padding:6px 12px;border:1px solid var(--line);border-radius:99px;font-size:14px;color:var(--fg);text-decoration:none}
+section{margin:30px 0}
+.intro{font-weight:600;margin:0 0 12px}
+.note{background:var(--card);border-left:4px solid var(--acc);padding:10px 12px;border-radius:6px;font-size:14px;margin:12px 0}
+.step{display:flex;gap:12px;background:var(--card);border-radius:10px;padding:12px;margin:10px 0}
+.step input{width:22px;height:22px;margin-top:2px;flex:none;accent-color:var(--acc)}
+.step h3{font-size:16px;margin:0 0 4px}
+.step.done h3{text-decoration:line-through;opacity:.6}
+.step p{margin:0 0 6px;color:var(--mut);font-size:15px}
+.res a,.tk a{color:var(--lk);font-size:14px;display:block;margin:3px 0;word-break:break-word}
+.res b{font-size:12px;text-transform:uppercase;color:var(--mut);letter-spacing:.05em}
+.outro{font-weight:600;margin:14px 0 0}
+.tk{background:var(--card);border-radius:10px;padding:12px 14px}
+footer{color:var(--mut);font-size:13px;margin-top:36px}
+</style>
+</head>
+<body>
+<main>
+<h1>Director's Production Guide</h1>
+<p class="sub">A step-by-step checklist for every production. Tap a box to check off a step.</p>
+<p class="src">Step copy adapted from a carousel by @lada.egorova_ on Instagram. Tips and resource links added.</p>
+
+<nav id="nav"></nav>
+<div id="app"></div>
+<footer>Contract templates are starting points, not legal advice. Have an entertainment attorney review anything you rely on, and check each site's terms before reusing its templates.</footer>
+</main>
+<script>
+var L={
+ct:["Actor, talent, location &amp; crew agreements (Wrapbook)","https://wrapbook.com/templates"],
+sb:["Crew deal memo, actor &amp; location releases, call sheet, shot list, EPK, poster, credits (StudioBinder)","https://www.studiobinder.com/film-production-documents/"],
+bd:["Script breakdown guide, PDF e-book (StudioBinder)","https://s.studiobinder.com/wp-content/uploads/2021/09/A-Filmmakers-Guide-to-Script-Breakdowns-E-Book-StudioBinder.pdf"],
+bs:["How to break down a script + free breakdown sheet PDF (StudioBinder)","https://www.studiobinder.com/blog/free-script-breakdown-sheet/"],
+fs:["Free call sheet, shot list, storyboard, budget, breakdown templates (PDF/Word)","https://www.submittingtofilmfestivals.com/resources/"],
+pf:["Fillable PDF film templates (PlatoForms)","https://templates.platoforms.com/pdf/tag/filmmaking"]
+};
+var S=[
+{id:"pre",t:"Pre-Production",intro:"A huge part of directing happens before you ever get on set.",outro:"You’re essentially building the movie before you shoot it.",steps:[
+["Break down the script","Read the script scene by scene and tag cast, props, locations, wardrobe and special needs. This feeds your budget and schedule.",["bs","bd"]],
+["Develop the visual language","Decide how the story should look and feel: framing, color, movement and texture. Write it down in a short look book.",[]],
+["Decide on tone, style &amp; references","Collect reference films, stills and music. Aim for 3–5 strong references you can share with every department.",[]],
+["Create shot lists","List every shot per scene in the order you plan to shoot it, with shot size, angle and movement.",["sb","fs"]],
+["Plan coverage","Decide the minimum shots you need to cut each scene (master, mediums, close-ups, inserts), then add extras if time allows.",["fs"]],
+["Storyboard / create shot references","Sketch key shots or collect reference frames. Stick figures work fine. The goal is a shared picture.",["sb","fs"]],
+["Scout locations","Visit at the planned shoot time. Check light, sound, power, parking and permission. Get a signed location release.",["ct","sb"]],
+["Work with the DP on camera, lenses &amp; lighting","Share your look book and shot list early and talk through camera, lens choices and lighting for each scene.",[]],
+["Collaborate with production design","Walk through each set and agree on color, props and set dressing. Use your breakdown to flag what's needed.",["bs"]],
+["Discuss costumes, hair &amp; makeup","Agree on a look for each character and check it against your color palette and continuity needs.",[]],
+["Cast actors","Write clear character breakdowns, run auditions with the same sides and put offers and agreements in writing.",["sb","ct"]],
+["Rehearse with actors","Read through the script, explore motivations and try the key scenes so set time goes to the camera.",[]],
+["Help build the schedule","Work with your AD or producer using your breakdown. Group by location and actor availability and add buffer.",["sb","fs"]],
+["Attend tech scouts &amp; production meetings","Bring department heads to each location and go over shots, safety and logistics. Take notes and follow up.",[]],
+["Communicate your vision to every department","Hold a tone meeting and share your look book, shot list and schedule so everyone works from the same plan.",["sb"]]
+]},
+{id:"prod",t:"Production",intro:"Then you get to set…and suddenly you're responsible for EVERYTHING coming together.",outro:"And yes… You still have to say “action” and “cut”",steps:[
+["Direct actors","Give one clear note at a time, framed around what the character wants rather than how to read the line. Get signed actor agreements and releases before the first shoot day.",["ct","sb"]],
+["Block scenes","Walk the actors through the space first, set their positions and movement, then place the camera around it.",[]],
+["Choose camera angles &amp; movement","Plan coverage ahead (master, mediums, close-ups) and make sure every move serves the story. Bring a shot list.",["sb","fs"]],
+["Adjust performances","Give notes privately and change one thing per take so you know what worked.",[]],
+["Answer a lot of questions","Prep your answers before the day starts. Route logistics questions through your AD or producer so you can stay on creative.",[]],
+["Make creative decisions on the spot","Know your non-negotiables ahead of time. Be flexible on everything else.",[]],
+["Problem-solve when something goes wrong","Ask what the scene truly needs, protect that, and drop or rework the rest. Keep a plan B for weather, locations and gear.",[]],
+["Protect the tone &amp; vision of the project","Keep a look book or reference images on set and check takes against them.",[]],
+["Manage time","Build a schedule with buffer and track it against the call sheet throughout the day.",["sb","fs"]],
+["Prioritize shots when you're running behind","Mark each shot must-have or nice-to-have on your shot list in advance so cuts are quick.",["fs"]],
+["Communicate with every department","Share the script breakdown and call sheet with all departments and hold a short tone meeting before the shoot.",["bs","bd","sb"]],
+["Decide when you have the take","Get a safety take, confirm picture and sound are good with your DP and sound, then call it and move on.",[]]
+]},
+{id:"post",t:"Post-Production",intro:"Your job doesn't end when you wrap.",outro:"You’re still shaping the story.",steps:[
+["Edit with the editor","Share your vision, reference films and a rough structure, then let the editor bring ideas.",[]],
+["Give notes on cuts","Be specific about the feeling you want. Note timecodes and prioritize big-picture notes first.",[]],
+["Restructure scenes","Try alternate orders in a duplicate sequence so you can always go back.",[]],
+["Choose takes","Review selects with fresh eyes and choose by performance first, technical polish second.",[]],
+["Work on pacing","Watch with an audience when possible and note where attention drifts.",[]],
+["Supervise VFX","Get shot-by-shot descriptions and review in rounds with clear notes and deadlines.",[]],
+["Work with the colorist","Bring references and agree on the look before grading. Check on different screens.",[]],
+["Work on the look of the film","Keep color, contrast and texture consistent with your look book.",[]],
+["Oversee sound design","Listen on headphones and speakers. Check dialogue clarity, ambience and mix levels.",[]],
+["Give notes on the score/music","Describe emotion and tempo, not music theory. Get composer and music licensing agreements in writing.",["ct","sb"]],
+["Review subtitles &amp; captions","Check accuracy, timing and spelling of names. Many festivals and platforms require them.",[]],
+["Watch exports","Watch the full export start to finish on at least two devices for glitches, sync or audio issues.",[]],
+["Approve the final version","Lock the cut, archive project files and masters, and keep a credits list ready.",["sb"]]
+]},
+{id:"dist",t:"Distribution &amp; Marketing",intro:"Especially as an independent filmmaker, you may also be involved in:",outro:"Because making the film is only half the job. You also have to help get people to WATCH it.",steps:[
+["Film festival submissions","Research festivals that fit your film, budget for fees and track deadlines in a spreadsheet.",["fs","ct"]],
+["Creating the trailer","Keep it short, lead with the strongest hook and never spoil the ending.",[]],
+["Choosing stills","Pick high-resolution frames or on-set photos with strong composition and emotion.",[]],
+["Poster/key art","Use one strong image and clear title. Export at standard print and web sizes.",["sb"]],
+["Writing loglines &amp; synopses","Write a one-sentence logline plus short and long synopses. Festivals ask for all three.",[]],
+["Press kits","Include logline, synopsis, stills, cast and crew bios, credits and contact info.",["sb"]],
+["Social media content","Post behind-the-scenes, clips and countdowns on a steady schedule.",[]],
+["Premiere planning","Choose a venue, set a date, invite cast, crew and press, and plan a Q&amp;A.",[]],
+["Press &amp; interviews","Prepare three talking points and a short story about why you made the film.",[]],
+["Networking","Follow up after events and keep a contact list of programmers, distributors and collaborators.",[]],
+["Finding distribution opportunities","Look at festivals, aggregators, streaming platforms and educational or niche distributors.",["ct"]],
+["Talking to sales agents / distributors","Have your deliverables, rights and chain-of-title paperwork ready and get an attorney to review any offer.",["ct"]],
+["Promoting the film to your audience","Build an email list and community early and update them at each milestone.",[]]
+]},
+{id:"dir",t:"The Director Role, Throughout",intro:"And then there's the part nobody puts on the job description… Being a director also means:",outro:"",steps:[
+["Leading people","Set the tone on day one, be consistent and treat everyone with respect.",[]],
+["Communicating clearly","Say what you want in plain words and confirm it was understood.",[]],
+["Making decisions under pressure","Decide, commit, adjust if needed. A fast clear call beats a perfect late one.",[]],
+["Knowing when to compromise","Trade flexibility on small details for what matters most.",[]],
+["Knowing when NOT to compromise","Define your 2–3 non-negotiables before production starts.",[]],
+["Keeping everyone motivated","Feed the crew, thank them, keep days realistic and celebrate wins.",[]],
+["Solving problems","Stay calm, list options and choose the one that best protects the story.",[]],
+["Managing limited resources","Spend on what shows on screen. Prioritize with your breakdown and budget.",["bs","fs"]],
+["Protecting the story","When in doubt, ask whether a choice helps or hurts the story.",[]],
+["Knowing how to collaborate with a team","Invite ideas from your department heads and credit them.",[]],
+["Managing actors' morale &amp; help them give their best","Create a safe, focused set. Give notes privately and acknowledge good work.",[]],
+["Having a vision AND knowing how to communicate it","Build a look book or pitch deck so everyone can see what you see.",[]]
+]}
+];
+function lk(a){return a.map(function(k){return '<a href="'+L[k][1]+'" target="_blank" rel="noopener">'+L[k][0]+' ↗</a>'}).join('')}
+var st={};try{st=JSON.parse(localStorage.getItem('dpg')||'{}')}catch(e){}
+function save(){try{localStorage.setItem('dpg',JSON.stringify(st))}catch(e){}}
+var h='<section id="kit"><h2>Pre-Production Toolkit</h2><p class="sub">Contracts and breakdown guides to have ready before you shoot.</p><div class="tk">'+lk(["bd","bs","ct","sb","fs","pf"])+'</div></section>';
+var nav='<a href="#kit">Toolkit</a>';
+S.forEach(function(s){
+nav+='<a href="#'+s.id+'">'+s.t+'</a>';
+h+='<section id="'+s.id+'"><h2>'+s.t+'</h2><p class="intro">'+s.intro+'</p>';
+s.steps.forEach(function(p,i){
+var id=s.id+i;
+h+='<label class="step'+(st[id]?' done':'')+'" id="r'+id+'"><input type="checkbox" data-id="'+id+'"'+(st[id]?' checked':'')+'><div><h3>'+(i+1)+'. '+p[0]+'</h3><p>'+p[1]+'</p>'+(p[2].length?'<div class="res"><b>Resources</b>'+lk(p[2])+'</div>':'')+'</div></label>';
+});
+if(s.outro)h+='<p class="outro">'+s.outro+'</p>';
+h+='</section>';
+});
+document.getElementById('app').innerHTML=h;
+document.getElementById('nav').innerHTML=nav;
+document.querySelectorAll('.step input').forEach(function(c){c.addEventListener('change',function(){
+var id=c.getAttribute('data-id');st[id]=c.checked;document.getElementById('r'+id).classList.toggle('done',c.checked);save();});});
+</script>
+</body>
+</html>
